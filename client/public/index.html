@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/icon_bank.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link rel="apple-touch-icon" href="logo.png" />
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+	<script src='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.js'></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"></script>
+
+
+	<!--Шрифты-->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Arsenal&family=Train+One&display=swap" rel="stylesheet">
+	<style>
+	html, body {
+		height: 100%;
+		overflow-x: hidden;
+	}
+	body {
+		display: flex;
+		flex-direction: column;
+	}
+	.content {
+		flex: 1 0 auto;
+	}
+	.footer {
+		flex-shrink: 0;
+	}
+	/*Логотип===============================================*/
+
+	*{
+		box-sizing: border-box;
+		transition-property: all;
+		transition-duration: .3s;
+		transition-timing-function: ease;
+	}
+
+	a {
+		text-decoration: none;
+	}
+	.navbar-brad {
+		font-size: x-large;
+		font-family: 'Train One', cursive;
+		color: #277cfd;
+		cursor: pointer;
+		display: block;
+		font-weight: 400;
+		line-height: 45px;
+		margin: 10px;
+		max-width: 150px;
+		width: 100%;
+		height: 45px;
+		text-align: center;
+		position: relative;
+		text-decoration: none;
+	}
+
+	.navbar-brad:hover:after,
+	.navbar-brad:hover:before {
+		-webkit-backface-visibility: hidden;
+		backface-visibility: hidden;
+		border-color: #277cfd;
+		transition: width 310ms ease-in-out;
+		width: 70%;
+		text-decoration: none;
+	}
+
+	.navbar-brad:after,
+	.navbar-brad:before {
+		-webkit-backface-visibility: hidden;
+		backface-visibility: hidden;
+		border: 1px solid  #277cfd;
+		bottom: 0px;
+		left: 0px;
+		content: " ";
+		display: block;
+		margin: 0 auto;
+		position: relative;
+		transition: all 210ms ease-in-out;
+		width: 0;
+	}
+	/*Меню======================================*/
+	*{
+		box-sizing: inherit;
+		transition-property: all;
+		transition-duration: .3s;
+		transition-timing-function: ease;
+	}
+	.nav-link
+	{
+		cursor: pointer;
+		display: block;
+		font-size: 16px;
+		font-weight: 400;
+		line-height: 45px;
+		margin: 10px;
+		max-width: 150px;
+		width: 100%;
+		height: 45px;
+		text-align: center;
+		position: relative;
+		text-transform: uppercase;
+	}
+	.nav-link.active {
+		content: ' ';
+		display: block;
+		width: 0;
+		height: 2px;
+		background: #277cfd;
+		transition: width 310ms ease-in-out;
+	}
+	.nav-link:after {
+		content: ' ';
+		display: block;
+		width: 0;
+		height: 2px;
+		background: #277cfd;
+		transition: width 310ms ease-in-out;
+	}
+
+	.nav-link:hover:after {
+		width:100%;
+	}
+	.navbar-brad:hover{
+		color: #B22222;
+	}
+	/* Button
+	.......................................................................*/
+	.button {
+		cursor: pointer;
+		font-size: 14px !important;
+		color: #000;
+		padding: 7px 10px !important;
+		text-decoration: none !important;
+		text-transform: uppercase !important;
+		letter-spacing: 0 !important;
+		background: #FFFFFF;
+		border: none;
+		border-bottom: solid 1px #B22222;;
+		border-radius: 10px;
+		text-align: center;
+		margin-top: 10px;
+	}
+	.button:hover {
+		background-color: #B22222;
+		border: none;
+		border-bottom: solid 1px #B22222;;
+		transform: scale(1.04);
+		-webkit-transform: scale(1.04);
+		-moz-transform: scale(1.04);
+		-o-transform: scale(1.04);
+		-ms-transform: scale(1.04);
+	}
+	.button:active {
+		background: #fff;
+	}
+	.button a {
+		color: #fff;
+		padding: 7px 30px !important;
+		text-decoration: none;
+	}
+	.button a:hover {
+		color: #fff;
+	}
+	.button:hover {
+		color: #fff;
+	}
+	/*Кнопка меню*/
+	.menu {
+		background-color: transparent;
+		border: none;
+		cursor: pointer;
+		display: flex;
+		padding: 0;
+	}
+	.line {
+		fill: none;
+		stroke: black;
+		stroke-width: 6;
+		transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+		stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+	}
+	.line1 {
+		stroke-dasharray: 60 207;
+		stroke-width: 6;
+	}
+	.line2 {
+		stroke-dasharray: 60 60;
+		stroke-width: 6;
+	}
+	.line3 {
+		stroke-dasharray: 60 207;
+		stroke-width: 6;
+	}
+	.opened .line1 {
+		stroke-dasharray: 90 207;
+		stroke-dashoffset: -134;
+		stroke-width: 6;
+	}
+	.opened .line2 {
+		stroke-dasharray: 1 60;
+		stroke-dashoffset: -30;
+		stroke-width: 6;
+	}
+	.opened .line3 {
+		stroke-dasharray: 90 207;
+		stroke-dashoffset: -134;
+		stroke-width: 6;
+	}
+
+	
+	/**/
+
+	</style>
+    <title>ART TOKEN WORK WITH CONTRACTS</title>
+  </head>
+  <body style="font-family: 'Arsenal', sans-serif;">
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+  </body>
+	  <div class="footer">
+		<div class="col-sm-12 col-md-12" style="text-align:center; 	margin:auto;">
+		  <hr style="border-color: #0e0e0; margin: 23px" />
+		  <p style="color:#277cfd; text-align: center; font-size: small; margin: 23px">Все права защищены &copy; 2021 <br> Команда 1</p>
+		</div>
+	  </div>
+</html>
